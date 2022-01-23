@@ -85,8 +85,8 @@ public class DocumentSearch {
 */
 	private void getStringMatch(File file){
 
-// 		  int count = 0;
-// 		  try (Scanner scanner = new Scanner(file)) {
+		  int count = 0;
+		  try (Scanner scanner = new Scanner(file)) {
 // 			  while(scanner.hasNext()) {
 // 				  String word = scanner.next();
 // 				  if(word.equalsIgnoreCase(searchTerm)) {
