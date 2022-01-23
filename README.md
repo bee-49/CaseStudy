@@ -23,7 +23,7 @@ method loads a new hashMap each time it is called, this takes O(n) time, even th
 hashmap is constant time. I think a better approach for this amount of searches would most likely using a data store <br />
 so that the hashmaps would not have to be created each time a user wanted to search a word. 
 
-##Thoughts on Scaling Program
+## Thoughts on Scaling Program
 In order for this program to handle massive content and/or very large request volume, some significant changes would need to <br />
 be made. As I mentioned above, using a data store to store the searched documents. I also spent some time researching how massive <br />
 search engines work (like Google) and discovered a Java search engine library called Lucene. <br /><br />
