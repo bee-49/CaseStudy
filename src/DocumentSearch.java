@@ -85,23 +85,23 @@ public class DocumentSearch {
 */
 	private void getStringMatch(File file){
 
-		  int count = 0;
-		  try (Scanner scanner = new Scanner(file)) {
-			  while(scanner.hasNext()) {
-				  String word = scanner.next();
-				  if(word.equalsIgnoreCase(searchTerm)) {
-					  count++;
-				  }
+// 		  int count = 0;
+// 		  try (Scanner scanner = new Scanner(file)) {
+// 			  while(scanner.hasNext()) {
+// 				  String word = scanner.next();
+// 				  if(word.equalsIgnoreCase(searchTerm)) {
+// 					  count++;
+// 				  }
 
-//			 while(scanner.hasNextLine()) {
-//				String line = scanner.nextLine();
-//				line.toLowerCase();
-//				int index = line.indexOf(searchTerm);
-//				while(index != -1) {
-//					count++;
-//					index = line.indexOf(searchTerm, index + searchTerm.length());
-//				}
-//				
+			 while(scanner.hasNextLine()) {
+				String line = scanner.nextLine();
+				line.toLowerCase();
+				int index = line.indexOf(searchTerm);
+				while(index != -1) {
+					count++;
+					index = line.indexOf(searchTerm, index + searchTerm.length());
+				}
+				
 			}
 		  } catch (FileNotFoundException e) {
 			e.printStackTrace();
