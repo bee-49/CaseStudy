@@ -122,19 +122,19 @@ public class DocumentSearch {
 	private void getRegEx(File file) throws FileNotFoundException {
 		//RegEx pattern
 		Pattern pattern = Pattern.compile(searchTerm);
-		 int count = 0;
-		 try (Scanner scanner = new Scanner(file)) {
-			 while(scanner.hasNext()) {
-				 String word = scanner.next();
-				 word.toLowerCase();
-				 Matcher match = pattern.matcher(word);
-				 if(match.find()) {
+		int count = 0;
+		try (Scanner scanner = new Scanner(file)) {
+			while(scanner.hasNext()) {
+				String word = scanner.next();
+				word.toLowerCase();
+				Matcher match = pattern.matcher(word);
+				if(match.find()) {
 					 count++;
-				 }
-			 }
+				}
+			}
 		}
-		 relevanceList.add(count);
-		 searchResults.put(count,fileMap.get(file));
+		relevanceList.add(count);
+		searchResults.put(count,fileMap.get(file));
 	}
 	
 	
@@ -149,17 +149,17 @@ public class DocumentSearch {
 		int idx = 0;
 		int count = 0;
 
-			try (Scanner scanner = new Scanner(file)) {
-				while(scanner.hasNext()) {
-					String word = scanner.next();
-					word.toLowerCase();
-					if(indexMap.containsKey(word)) {
-						idx = indexMap.get(word) + 1;
-					}
-					
-					indexMap.put(word, idx);
+		try (Scanner scanner = new Scanner(file)) {
+			while(scanner.hasNext()) {
+				String word = scanner.next();
+				word.toLowerCase();
+				if(indexMap.containsKey(word)) {
+					idx = indexMap.get(word) + 1;
 				}
+					
+				indexMap.put(word, idx);
 			}
+		}
 			
 		if(indexMap.containsKey(searchTerm)) {
 			count = indexMap.get(searchTerm);
